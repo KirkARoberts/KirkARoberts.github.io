@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="newsFeed">
+<head>
+    <meta charset="UTF-8">
+    <title>News Tings</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container news-feed">
+        <h1 class="title text-center display-2">News Tings</h1>
+        <div ng-controller="NewsFeedController as news">
+            <div class="row">
+                <div ng-repeat="article in articles">
+                    <div class="card col-md article" style="width: 20rem;">
+                        <img class="card-img-top img-thumbnail" src="{{article.urlToImage}}" alt="{{article.title}}">
+                        <div class="card-block">
+                            <h4 class="card-title">{{article.title}}</h4>
+                            <p class="card-text">{{article.description}}</p>
+                            <a href="{{article.url}}" class="btn btn-primary">View more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Powered by <a href="http://newsapi.org">NewsAPI.org</a></p>
+    </div>
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</html>
